@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+	<title>Lojinha - Adicionar</title>
+</head>
+<body class="form-body">
+	<div class="form-container">
+		<form name="formContato" action="inserir">
+			<table>
+				<tbody class="form-content">
+					<tr>
+						<td class="input-td">
+							<label class="label" for="name">Nome <small>*</small></label>
+							<input class="input" type="text" id="name" name="nome" placeholder="Ex:. Leite Condensado" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="input-td">
+							<label class="label" for="quant">Quantidade <small>*</small></label>
+							<input class="input number-input" type="number" id="quant" name="quantidade" placeholder="Ex:. 10" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="input-td">
+							<label class="label" for="value">Valor <small>*</small></label>
+							<input class="input" type="text" id="value" name="valor" placeholder="Ex:. R$5,99" onkeypress="formatarValor(event)" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="input-td">
+							<label class="label" for="expiration">Vencimento <small>*</small></label>
+							<input class="input date-input" type="date" id="expiration" name="vencimento" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="input-td">
+							<label class="label" for="brand">Marca <small>*</small></label>
+							<input class="input" type="text" id="brand" name="marca" placeholder="Ex:. Nestle" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="input-td">
+							<label class="label" for="category">Categoria <small>*</small></label>
+							<input class="input" type="text" id="category" name="categoria" placeholder="Ex:. Doce" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="button-td">
+							<input type="submit" value="Adicionar" class="btn add-button">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	
+	<script src="scripts/script.js"></script>
+</body>
+</html>

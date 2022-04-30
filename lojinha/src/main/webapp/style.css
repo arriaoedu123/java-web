@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --primary: #009ffd;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	color: var(--primary);
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--bg-primary);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.home-body {
+	align-items: center;
+}
+
+.form-body {
+	align-items: center;
+}
+
+.form-content {
+	display: flex;
+	width: 700px;
+	flex-wrap: wrap;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 50%;
+	padding: 30px;
+}
+
+.home-container {
+	border: 5px solid var(--primary);
+	width: 450px;
+	height: 450px;
+}
+
+.add-container {
+	align-items: center;
+}
+
+.home-icon {
+	font-size: 128px;
+	color: var(--primary);
+}
+
+.home-title,
+.add-title {
+	margin-top: 50px;
+	color: var(--text-color);
+	word-wrap: break-word;
+}
+
+.add-title {
+	font-size: 42px;
+}
+
+.btn {
+	text-decoration: none;
+	border: none;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	transition: 0.2s ease;
+	margin-top: 50px;
+}
+
+.btn:hover {
+	transform: scale(1.05);
+}
+
+.btn:active {
+	font-size: 15px;
+}
+
+.home-button {
+	background: var(--primary);	
+	width: 110px;
+}
+
+.new-button {
+	background: var(--success);
+	width: 220px;
+}
+
+.input-td {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-td label {
+	text-align: left;
+}
+
+.input-td label small {
+	color: var(--text-primary);
+}
+
+.button-td {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.add-button {
+	background: var(--success);
+	width: 130px;
+	cursor: pointer;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.20rem;
+}
+
+.input {
+  	width: 340px;
+ 	height: 46px;
+ 	outline: none;
+	border: 3px solid #007bff;
+	background: rgba(255, 255, 255, 0.2);
+  	color: var(--text-secondary);
+  	transition: .3s border;
+  	margin-bottom: 5px;
+  	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  	border-radius: .5rem;
+  	font-size: 1rem;
+  	font-weight: 500;
+  	padding: 0 .8rem;
+}
+
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+	-webkit-appearance: none; 
+    margin: 0; 
+}
+
+.number-input {
+	-moz-appearance: textfield;
+}
+
+.form-content tr:nth-child(1),
+.form-content tr:nth-child(3),
+.form-content tr:nth-child(5) {
+	margin-right: 20px;
+}
+
+.form-content tr:nth-child(7) {
+	width: 100%
+}
+
+.input:focus {
+  	border: 3px solid #2c3e50;
+}
+
+.input::placeholder {
+	color: var(--text-primary);
+}
+
+.date-input {
+	color: var(--text-primary);
+}
+
+.date-input:valid {
+	color: var(--text-secondary);
+}
+
+.date-input:valid::-webkit-calendar-picker-indicator {
+	filter: invert(0.9);
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+	filter: invert(0.7);
+	cursor: pointer;
+}
