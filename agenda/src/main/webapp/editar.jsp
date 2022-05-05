@@ -17,7 +17,7 @@
 				<tr>
 					<td class="input-td">
 						<label class="label" for="id">ID</label>
-						<input class="input" type="text" id="id" name="idcon" placeholder="Ex:. 1" value="<% out.print(request.getAttribute("idcon")); %>" readonly disabled>
+						<input class="input" type="text" id="id" name="idcon" placeholder="Ex:. 1" value="<% out.print(request.getAttribute("idcon")); %>" readonly>
 					</td>
 				</tr>
 				<tr>

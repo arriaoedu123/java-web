@@ -16,7 +16,7 @@ import model.JavaBeans;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet(urlPatterns = { "/Controller", "/main", "/inserir" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/inserir", "/select", "/update", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -49,6 +49,12 @@ public class Controller extends HttpServlet {
 			contatos(request, response);
 		} else if (action.equals("/inserir")) {
 			novoContato(request, response);
+		} else if (action.equals("/select")) {
+			listarContato(request, response);
+		} else if (action.equals("/update")) {
+			editarContato(request, response);
+		} else if (action.equals("/delete")) {
+			removerContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -73,6 +79,7 @@ public class Controller extends HttpServlet {
 		rd.forward(request, response);
 	}
 
+	// CRUD Create
 	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/*
@@ -88,6 +95,45 @@ public class Controller extends HttpServlet {
 
 		dao.inserirContato(contato);
 
+		response.sendRedirect("main");
+	}
+	
+	// CRUD Read
+	protected void listarContato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Recebe o parâmetro idcon
+		String idcon = request.getParameter("idcon");
+		// Testa o envio do parâmetro
+		System.out.println(idcon);
+		// Configura o parâmetro do objeto
+		this.contato.setIdcon(idcon);
+		// Selecionar o contato
+		this.dao.selecionarContato(contato);
+		// Teste
+		request.setAttribute("idcon", contato.getIdcon());
+		request.setAttribute("nome", contato.getNome());
+		request.setAttribute("email", contato.getEmail());
+		request.setAttribute("fone", contato.getFone());
+		
+		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
+		rd.forward(request, response);
+	}
+	
+	// CRUD Update
+	protected void editarContato(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.contato.setIdcon(request.getParameter("idcon"));
+		this.contato.setNome(request.getParameter("nome"));
+		this.contato.setFone(request.getParameter("fone"));
+		this.contato.setEmail(request.getParameter("email"));
+		this.dao.alterarContato(this.contato);
+		response.sendRedirect("main");
+	}
+	
+	// CRUD Delete
+	protected void removerContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idcon = request.getParameter("idcon");
+		contato.setIdcon(idcon);
+		dao.deletarContato(contato);
 		response.sendRedirect("main");
 	}
 

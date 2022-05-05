@@ -17,6 +17,18 @@ public class JavaBeans {
 		this.vencimento = vencimento;
 	}
 
+	public JavaBeans(String idpro, String nome, String quantidade, String valor, String vencimento, String marca,
+			String categoria) {
+		super();
+		this.idpro = idpro;
+		this.nome = nome;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.vencimento = vencimento;
+		this.marca = marca;
+		this.categoria = categoria;
+	}
+
 	public String getMarca() {
 		return marca;
 	}

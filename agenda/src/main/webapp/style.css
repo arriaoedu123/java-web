@@ -176,11 +176,16 @@ body {
 	padding: 15px 15px;
 }
 
-.edit-button {
+.edit-button,
+.delete-button {
 	text-decoration: none;
 	border: none;
 	border-radius: 5px;
 	padding: 8px;
 	background-color: var(--warning);
 	color: var(--text-secondary);
+}
+
+.delete-button {
+	background-color: var(--danger);
 }

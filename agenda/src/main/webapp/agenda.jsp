@@ -40,11 +40,16 @@ ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contat
 						<td><%=lista.get(i).getNome() %> </td>
 						<td><%=lista.get(i).getFone() %> </td>
 						<td><%=lista.get(i).getEmail() %> </td>
-						<td><a href="select?idcon=<%=lista.get(i).getIdcon()%>" class="edit-button">Editar</a></td>
+						<td>
+							<a href="select?idcon=<%=lista.get(i).getIdcon()%>" class="edit-button">Editar</a>
+							<a href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)" class="delete-button">Deletar</a>
+						</td>
 					</tr>
 				<%} %>
 			</tbody>
 		</table>
 	</div>
+	
+	<script src="scripts/script.js"></script>
 </body>
 </html>
